@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, CheckCircle2, Package, Clock, MousePointerClick, ChevronRight, XCircle, Code2, Cpu, Zap, Lock, Bot, Server } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Package, Clock, MousePointerClick, ChevronRight, XCircle, Bot, Server } from 'lucide-react';
 
 export const ProductStructure: React.FC = () => {
   const openWhatsApp = () => {
@@ -31,9 +31,7 @@ export const ProductStructure: React.FC = () => {
             </p>
         </div>
 
-        {/* =======================================================
-            PART 1: THE 24H JOURNEY (PATH VISUALIZATION)
-           ======================================================= */}
+        {/* PART 1: THE 24H JOURNEY */}
         <div className="mb-20 relative">
              <div className="flex items-center justify-between mb-8 border-b border-slate-800 pb-8">
                 <div>
@@ -47,37 +45,27 @@ export const ProductStructure: React.FC = () => {
              </div>
 
              <div className="relative">
-                 {/* THE PATH (Desktop Horizontal Line) */}
                  <div className="hidden md:block absolute top-16 left-[15%] right-[15%] h-0.5 border-t-2 border-dashed border-slate-800 z-0"></div>
-                 
-                 {/* THE PATH (Mobile Vertical Line) */}
                  <div className="md:hidden absolute left-8 top-8 bottom-8 w-0.5 border-l-2 border-dashed border-slate-800 z-0"></div>
 
                  <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative z-10">
-                     
                      {/* Step 1 */}
                      <div className="bg-slate-900/50 backdrop-blur rounded-[2rem] p-8 border border-slate-800 shadow-xl relative group hover:-translate-y-2 transition-transform duration-300">
                          <div className="absolute -top-4 left-6 md:left-1/2 md:-translate-x-1/2 bg-slate-800 text-slate-400 text-[10px] font-bold px-3 py-1 rounded-full border border-slate-700 z-20">PASSO 01</div>
-                         
                          <div className="w-20 h-20 bg-slate-800 rounded-3xl flex items-center justify-center mb-8 shadow-inner border border-slate-700 text-slate-900 relative z-10 mx-auto group-hover:bg-brand-900/50 group-hover:border-brand-500/30 transition-all">
                              <MousePointerClick className="w-10 h-10 text-brand-500" />
                          </div>
-
                          <div className="text-center">
                             <h4 className="text-2xl font-bold text-white mb-3">Briefing Expresso</h4>
                             <p className="text-sm text-slate-400 leading-relaxed mb-6 text-left">
-                                Esqueça reuniões intermináveis. Você responde um Briefing inteligente e tem uma breve conversa no WhatsApp para tirar suas dúvidas finais.
+                                Esqueça reuniões intermináveis. Você responde um Briefing inteligente e tem uma breve conversa no WhatsApp.
                             </p>
                             <div className="w-full h-px bg-slate-800 mb-4"></div>
                             <ul className="text-left space-y-2">
                                 <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-brand-500 shrink-0 mt-0.5"/> Entrega Organizada</li>
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-brand-500 shrink-0 mt-0.5"/> 100% No Seu Objetivo.</li>
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-brand-500 shrink-0 mt-0.5"/> Rapidez com Qualidade.</li>
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-brand-500 shrink-0 mt-0.5"/> Processo Claro do Início ao Fim.</li>
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-brand-500 shrink-0 mt-0.5"/> Você sabe exatamente o que está sendo feito.</li>
+                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-brand-500 shrink-0 mt-0.5"/> Rapidez com Qualidade</li>
                             </ul>
                          </div>
-
                          <div className="hidden md:flex absolute top-16 -right-8 w-10 h-10 bg-slate-950 rounded-full items-center justify-center border border-slate-800 shadow-sm z-20 text-slate-600">
                              <ChevronRight size={20} />
                          </div>
@@ -86,41 +74,30 @@ export const ProductStructure: React.FC = () => {
                      {/* Step 2 */}
                      <div className="bg-slate-900/50 backdrop-blur rounded-[2rem] p-8 border border-slate-800 shadow-xl relative group hover:-translate-y-2 transition-transform duration-300">
                          <div className="absolute -top-4 left-6 md:left-1/2 md:-translate-x-1/2 bg-slate-800 text-slate-400 text-[10px] font-bold px-3 py-1 rounded-full border border-slate-700 z-20">PASSO 02</div>
-                         
                          <div className="w-20 h-20 bg-slate-800 rounded-3xl flex items-center justify-center mb-8 shadow-inner border border-slate-700 text-slate-900 relative z-10 mx-auto group-hover:bg-amber-900/50 group-hover:border-amber-500/30 transition-all">
                              <Bot className="w-10 h-10 text-amber-500" />
                          </div>
-
                          <div className="text-center">
                             <h4 className="text-2xl font-bold text-white mb-3">Construção Inteligente</h4>
                             <p className="text-sm text-slate-400 leading-relaxed mb-6 text-left">
-                                Contamos com tecnologias avançadas em cada etapa do processo, garantindo um site otimizado.
+                                Tecnologias avançadas em cada etapa, garantindo um site otimizado e veloz.
                             </p>
                             <div className="w-full h-px bg-slate-800 mb-4"></div>
                             <ul className="text-left space-y-2">
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-amber-500 shrink-0 mt-0.5"/> Código limpo (padrões Google)</li>
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-amber-500 shrink-0 mt-0.5"/> SEO nativo e estruturado</li>
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-amber-500 shrink-0 mt-0.5"/> Precisão técnica em cada pixel</li>
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-amber-500 shrink-0 mt-0.5"/> Alta performance e rapidez</li>
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-amber-500 shrink-0 mt-0.5"/> Experiência orientada à conversão</li>
+                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-amber-500 shrink-0 mt-0.5"/> Código limpo (Google)</li>
                                 <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-amber-500 shrink-0 mt-0.5"/> Design estratégico</li>
-                                <li className="text-xs text-slate-500 flex items-start gap-2"><CheckCircle2 size={12} className="text-amber-500 shrink-0 mt-0.5"/> Copy persuasiva</li>
                             </ul>
                          </div>
-
                          <div className="hidden md:flex absolute top-16 -right-8 w-10 h-10 bg-slate-950 rounded-full items-center justify-center border border-slate-800 shadow-sm z-20 text-slate-600">
                              <ChevronRight size={20} />
                          </div>
                      </div>
 
-                     {/* Step 3 (FINAL) */}
+                     {/* Step 3 */}
                      <div className="bg-gradient-to-b from-blue-600 to-blue-900 rounded-[2rem] p-8 border border-blue-400 shadow-[0_0_60px_rgba(37,99,235,0.3)] relative group hover:-translate-y-2 transition-transform duration-300 ring-1 ring-white/20">
-                         {/* Background Texture - Clipped */}
                          <div className="absolute inset-0 rounded-[2rem] overflow-hidden pointer-events-none">
                             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
                          </div>
-                         
-                         {/* Badge */}
                          <div className="absolute -top-4 left-6 md:left-1/2 md:-translate-x-1/2 z-20">
                             <div className="bg-white text-blue-800 text-[10px] font-black px-4 py-1.5 rounded-full shadow-lg border-2 border-blue-200 uppercase tracking-widest flex items-center gap-2">
                                 <span className="relative flex h-2 w-2">
@@ -130,96 +107,66 @@ export const ProductStructure: React.FC = () => {
                                 Lançamento
                             </div>
                          </div>
-                         
                          <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center mb-8 shadow-lg border border-white/30 text-white relative z-10 mx-auto group-hover:scale-110 transition-transform">
                              <Server className="w-10 h-10 text-white drop-shadow-md" />
                          </div>
-
                          <div className="text-center relative z-10">
                             <h4 className="text-2xl font-bold text-white mb-3">Seu Código, Sua Regra</h4>
-                            <p className="text-sm text-blue-100 leading-relaxed mb-8 font-medium">
-                                A entrega final é realizada via transferência direta de arquivos e configuração completa no servidor, garantindo total transparência e plena propriedade do projeto. Fazemos toda a integração com o seu domínio (HostGator ou qualquer outro provedor) e disponibilizamos acesso total. <br/><br/>
-                                Caso você ainda não possua um domínio, nossa equipe oferece suporte na escolha, aquisição e configuração.
+                            <p className="text-sm text-blue-100 leading-relaxed mb-8 font-medium text-left">
+                                A entrega é realizada via transferência direta, garantindo total propriedade. Fazemos a configuração completa.
                             </p>
                             <button 
                                 onClick={openWhatsApp}
-                                className="w-full py-4 bg-white hover:bg-slate-50 text-blue-700 font-bold rounded-xl transition-all flex items-center justify-center gap-2 text-sm shadow-xl hover:shadow-2xl hover:shadow-white/20 transform hover:-translate-y-1"
+                                className="w-full py-4 bg-white hover:bg-slate-50 text-blue-700 font-bold rounded-xl transition-all flex items-center justify-center gap-2 text-sm shadow-xl"
                             >
                                 Iniciar Agora <ArrowRight size={14} />
                             </button>
                          </div>
                      </div>
-
                  </div>
              </div>
         </div>
 
-        {/* =======================================================
-            PART 2: THE COMPARISON (US VS THEM)
-           ======================================================= */}
+        {/* PART 2: THE COMPARISON */}
         <div className="grid lg:grid-cols-12 gap-10 items-start mb-16">
-            
             <div className="lg:col-span-4">
-                <h3 className="text-3xl font-bold text-white mb-6">Por que empresas e profissionais <br/>escolhem a MyPages.</h3>
+                <h3 className="text-3xl font-bold text-white mb-6">Por que escolher a MyPages.</h3>
                 <p className="text-slate-400 mb-8 leading-relaxed">
-                    Unimos tecnologia avançada com a segurança de uma entrega profissional. Aqui, você não aluga um site, você recebe um ativo digital que é totalmente seu. Nada de planos, plugins ou mensalidades escondidas.
+                    Unimos tecnologia avançada com a segurança de uma entrega profissional. Aqui, você não aluga um site, você recebe um ativo digital que é totalmente seu.
                 </p>
             </div>
 
             <div className="lg:col-span-8">
                 <div className="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
-                    {/* Header Row */}
                     <div className="grid grid-cols-3 bg-slate-950 p-0 border-b border-slate-800 text-[10px] md:text-xs font-bold uppercase tracking-wider text-slate-500">
                         <div className="col-span-1 p-3 md:p-5">Critério</div>
-                        <div className="col-span-1 p-3 md:p-5 text-center text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)] font-bold">Outras Plataformas</div>
-                        {/* Highlighted Header Cell */}
-                        <div className="col-span-1 p-3 md:p-5 text-center text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] font-bold bg-brand-900/20 border-l border-brand-500/10">MyPages</div>
+                        <div className="col-span-1 p-3 md:p-5 text-center text-red-500">Outras Plataformas</div>
+                        <div className="col-span-1 p-3 md:p-5 text-center text-cyan-400 bg-brand-900/20 border-l border-brand-500/10">MyPages</div>
                     </div>
                     
-                    {/* Row 1 */}
-                    <div className="grid grid-cols-3 border-b border-slate-800 items-center hover:bg-slate-800/50 transition-colors">
+                    <div className="grid grid-cols-3 border-b border-slate-800 items-center">
                         <div className="col-span-1 p-3 md:p-5 font-bold text-white text-xs md:text-sm">Propriedade</div>
-                        <div className="col-span-1 p-3 md:p-5 text-center text-slate-400 text-[10px] md:text-sm">Aluguel (Perde se parar)</div>
-                        {/* Highlighted Cell */}
-                        <div className="col-span-1 p-3 md:p-5 text-center font-bold text-green-400 text-[10px] md:text-sm bg-brand-900/10 border-l border-brand-500/10 h-full flex items-center justify-center">
-                            <span className="bg-green-900/30 px-2 py-1 rounded-lg border border-green-500/30">E Tudo Seu!</span>
+                        <div className="col-span-1 p-3 md:p-5 text-center text-slate-400 text-[10px] md:text-sm">Aluguel</div>
+                        <div className="col-span-1 p-3 md:p-5 text-center font-bold text-green-400 text-[10px] md:text-sm bg-brand-900/10 border-l border-brand-500/10 h-full flex items-center justify-center">E Tudo Seu!</div>
+                    </div>
+
+                    <div className="grid grid-cols-3 border-b border-slate-800 items-center">
+                        <div className="col-span-1 p-3 md:p-5 font-bold text-white text-xs md:text-sm">Performance</div>
+                        <div className="col-span-1 p-3 md:p-5 text-center text-slate-400 text-[10px] md:text-sm flex justify-center gap-1 items-center"><XCircle size={12} /> Lento</div>
+                        <div className="col-span-1 p-3 md:p-5 text-center font-bold text-white text-[10px] md:text-sm bg-brand-900/10 border-l border-brand-500/10 h-full flex items-center justify-center gap-1 md:gap-2">
+                             <CheckCircle2 size={12} className="text-brand-400"/> Otimizado
                         </div>
                     </div>
 
-                    {/* Row 2 */}
-                    <div className="grid grid-cols-3 border-b border-slate-800 items-center hover:bg-slate-800/50 transition-colors">
-                        <div className="col-span-1 p-3 md:p-5 font-bold text-white text-xs md:text-sm">Performance (SEO)</div>
-                        <div className="col-span-1 p-3 md:p-5 text-center text-slate-400 text-[10px] md:text-sm flex flex-col md:flex-row justify-center gap-1 items-center"><XCircle size={12} className="md:w-4 md:h-4" /> <span>Lento</span></div>
-                        {/* Highlighted Cell */}
-                        <div className="col-span-1 p-3 md:p-5 text-center font-bold text-white text-[10px] md:text-sm bg-brand-900/10 border-l border-brand-500/10 h-full flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2">
-                             <CheckCircle2 size={12} className="text-brand-400 md:w-4 md:h-4"/> <span>Otimizado</span>
-                        </div>
-                    </div>
-
-                    {/* Row 3 */}
-                    <div className="grid grid-cols-3 border-b border-slate-800 items-center hover:bg-slate-800/50 transition-colors">
-                        <div className="col-span-1 p-3 md:p-5 font-bold text-white text-xs md:text-sm">Hospedagem</div>
-                        <div className="col-span-1 p-3 md:p-5 text-center text-slate-400 text-[10px] md:text-sm">Preso na Plataforma</div>
-                        {/* Highlighted Cell */}
-                        <div className="col-span-1 p-3 md:p-5 text-center font-bold text-white text-[10px] md:text-sm bg-brand-900/10 border-l border-brand-500/10 h-full flex items-center justify-center">
-                            Liberdade (HostGator)
-                        </div>
-                    </div>
-
-                    {/* Row 4 */}
-                    <div className="grid grid-cols-3 items-center hover:bg-slate-800/50 transition-colors">
+                    <div className="grid grid-cols-3 items-center">
                         <div className="col-span-1 p-3 md:p-5 font-bold text-white text-xs md:text-sm">Entrega</div>
                         <div className="col-span-1 p-3 md:p-5 text-center text-slate-400 text-[10px] md:text-sm">3 a 5 dias</div>
-                        {/* Highlighted Cell */}
-                        <div className="col-span-1 p-3 md:p-5 text-center font-bold text-white text-[10px] md:text-sm bg-brand-900/10 border-l border-brand-500/10 h-full flex items-center justify-center">
-                            24h / 48h
-                        </div>
+                        <div className="col-span-1 p-3 md:p-5 text-center font-bold text-white text-[10px] md:text-sm bg-brand-900/10 border-l border-brand-500/10 h-full flex items-center justify-center">24h / 48h</div>
                     </div>
                 </div>
             </div>
-
         </div>
-
+      </div>
     </section>
   );
 };
