@@ -1,11 +1,12 @@
+
 import React from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { Features } from './components/Features';
-import { Steps } from './components/Steps';
-import { Pricing } from './components/Pricing';
-import { Footer } from './components/Footer';
-import { WhatsAppFloat } from './components/WhatsAppFloat';
+import { Navbar } from './Navbar';
+import { Hero } from './Hero';
+import { Features } from './Features';
+import { Steps } from './Steps';
+import { Pricing } from './Pricing';
+import { Footer } from './Footer';
+import { WhatsAppFloat } from './WhatsAppFloat';
 
 const App: React.FC = () => {
   return (
@@ -31,7 +32,7 @@ const App: React.FC = () => {
                 </p>
                 <div>
                     <button 
-                      onClick={() => window.open('https://wa.me/55999999999?text=Quero%20come%C3%A7ar', '_blank')}
+                      onClick={() => window.open('https://wa.me/5521993009478?text=Quero%20come%C3%A7ar', '_blank')}
                       className="bg-[#25D366] text-white font-black py-4 px-12 rounded-full hover:bg-[#128C7E] transition-all shadow-2xl hover:shadow-green-500/20 transform hover:-translate-y-1 duration-200 text-lg uppercase"
                     >
                         GARANTIR MINHA PÁGINA
