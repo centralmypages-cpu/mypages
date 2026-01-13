@@ -1,41 +1,49 @@
+
 import { GoogleGenAI, Type } from "@google/genai";
 import { GeneratedContent } from "../types";
 
-const apiKey = process.env.API_KEY || '';
-// Initialize securely - in a real app, handle missing key gracefully
-const ai = new GoogleGenAI({ apiKey });
-
+/**
+ * Gera o conteúdo estratégico da landing page usando o modelo Gemini 3.
+ * O conteúdo é retornado em formato JSON estruturado para alimentar a UI.
+ */
 export const generateLandingPageCopy = async (businessDescription: string): Promise<GeneratedContent> => {
-  if (!apiKey) {
-    // Fallback if no API key is present for demo purposes
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          headline: "Transforme Seu Negócio Hoje",
-          subheadline: "A solução completa que você estava procurando para escalar suas vendas e automação.",
-          ctaText: "Começar Agora",
-          benefits: ["Aumento de Conversão", "Automação Inteligente", "Suporte 24/7"]
-        });
-      }, 1500);
-    });
+  const apiKey = process.env.API_KEY;
+
+  // Verifica se a chave de API está presente
+  if (!apiKey || apiKey === "SUA_CHAVE_AQUI") {
+    console.error("ERRO CRÍTICO: API_KEY não encontrada no process.env. Verifique as configurações da Vercel.");
+    
+    // Retorna um conteúdo padrão de segurança para evitar que o site quebre
+    return {
+      headline: "Sua Presença Digital com MyPages",
+      subheadline: "Criamos landing pages de alta conversão para transformar seu negócio em referência no mercado.",
+      ctaText: "Falar com Especialista",
+      benefits: [
+        "Design de Alta Performance",
+        "Estratégia de Conversão",
+        "Entrega em Tempo Recorde"
+      ]
+    };
   }
 
   try {
+    // Inicializa o SDK usando a chave obtida
+    const ai = new GoogleGenAI({ apiKey });
+
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: `Generate a high-conversion landing page structure for a business described as: "${businessDescription}". content should be in Portuguese.`,
+      model: "gemini-3-flash-preview",
+      contents: `Aja como um Copywriter Senior. Crie o conteúdo de uma Landing Page para o negócio: "${businessDescription}". Retorne em JSON com headline impactante, subheadline persuasiva, ctaText curto e 3 benefícios principais. Idioma: PT-BR.`,
       config: {
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
           properties: {
-            headline: { type: Type.STRING, description: "A catchy, short, high-impact H1 headline." },
-            subheadline: { type: Type.STRING, description: "A persuasive subtitle explaining the value proposition." },
-            ctaText: { type: Type.STRING, description: "Text for the main call-to-action button." },
+            headline: { type: Type.STRING },
+            subheadline: { type: Type.STRING },
+            ctaText: { type: Type.STRING },
             benefits: {
               type: Type.ARRAY,
-              items: { type: Type.STRING },
-              description: "A list of 3 key benefits, short phrases."
+              items: { type: Type.STRING }
             }
           },
           required: ["headline", "subheadline", "ctaText", "benefits"],
@@ -44,18 +52,17 @@ export const generateLandingPageCopy = async (businessDescription: string): Prom
     });
 
     const text = response.text;
-    if (!text) throw new Error("No response from AI");
+    if (!text) throw new Error("Resposta vazia da IA.");
     
     return JSON.parse(text) as GeneratedContent;
 
   } catch (error) {
-    console.error("Error generating content:", error);
-    // Fallback on error
+    console.error("Erro ao chamar Gemini API:", error);
     return {
-      headline: "Sua Ideia, Online em Minutos",
-      subheadline: "Ocorreu um erro ao gerar o conteúdo personalizado, mas nossa plataforma está pronta para você.",
-      ctaText: "Criar Manualmente",
-      benefits: ["Rápido", "Fácil", "Seguro"]
+      headline: "Sua Nova Landing Page",
+      subheadline: "O design e a estratégia que seu negócio precisa para escalar as vendas.",
+      ctaText: "Garantir Minha Vaga",
+      benefits: ["Foco em Resultados", "Tecnologia de Ponta", "Suporte Exclusivo"]
     };
   }
 };

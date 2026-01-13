@@ -36,7 +36,7 @@ export const Features: React.FC = () => {
                 <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-lg font-medium">
                     Criamos sua Landing Page ou site para guiar o visitante até a decisão final, eliminando dúvidas antes mesmo delas surgirem.
                     <br /><br />
-                    Quando ele chega ao seu WhatsApp, já sabe o que quer, quanto custa e por que escolher você pronto para contratar.
+                    Quando ele entra em contato pelo WhatsApp, já sabe o que deseja, quanto custa e por que escolher você, estando pronto para contratar.
                 </p>
 
                 {/* Bloco de Dados: Matemática da Conversão */}
