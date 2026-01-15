@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
@@ -78,7 +79,8 @@ const App: React.FC = () => {
       <main>
         {currentPage === 'home' && (
           <div className="animate-fade-in">
-            <Hero onStartProject={() => handlePlanSelect('mypages')} />
+            {/* Correção aplicada aqui: onStartProject agora recebe a função handlePlanSelect */}
+            <Hero onStartProject={() => handlePlanSelect('Página de Vendas Profissional')} />
             <PainSection />
             <LogoTicker />
             <Features />
