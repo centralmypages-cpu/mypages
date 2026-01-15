@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AlertTriangle, DollarSign, Clock, Activity, TrendingDown, EyeOff, AlertOctagon, Ban, ArrowDown } from 'lucide-react';
 
@@ -24,25 +23,17 @@ export const PainSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Header - Alert Style */}
-        <div className="flex flex-col items-center text-center mb-16">
-           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-950/50 border border-red-500 text-red-400 text-xs font-bold uppercase tracking-widest mb-8 animate-fade-in backdrop-blur-md shadow-[0_0_20px_rgba(239,68,68,0.4)]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-              </span>
-              Diagnóstico Crítico Encontrado
-           </div>
-           
-           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-[1.1] tracking-tight max-w-4xl">
-             Você trabalha duro, mas seu site <br className="hidden md:block" />
+        {/* Header - Simple Style without Diagnosis Badge */}
+        <div className="flex flex-col items-center text-center mb-16 pt-8">
+           <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-[1.1] tracking-tight max-w-4xl">
+             Você faz sua parte <br className="hidden md:block" />
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-300 drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">
-                 joga contra você.
+                 Mas seu Site não.
              </span>
            </h2>
            
-           <p className="text-base md:text-lg text-slate-300 font-medium max-w-2xl">
-             O mercado não perdoa amadores. A falta de uma <span className="text-red-400 font-bold border-b border-red-500/50">Landing Page Profissional</span> está drenando seu faturamento silenciosamente.
+           <p className="text-base md:text-xl text-slate-300 font-medium max-w-3xl leading-relaxed">
+             Um site desatualizado ou genérico prejudica sua autoridade e faz você perder oportunidades de atendimento todos os dias.
            </p>
         </div>
 
@@ -94,7 +85,7 @@ export const PainSection: React.FC = () => {
                         <div>
                             <h4 className="text-white font-bold text-base md:text-lg mb-1 group-hover:text-red-400 transition-colors">Invisibilidade Digital</h4>
                             <p className="text-slate-400 text-sm">
-                                Stories somem em 24h. Sem uma Landing Page indexada, você não existe no Google e depende da sorte.
+                                Stories somem em 24h. Sem uma Página de Vendas indexada, você não existe no Google e depende da sorte.
                             </p>
                         </div>
                     </div>
@@ -131,7 +122,7 @@ export const PainSection: React.FC = () => {
                 <p className="text-slate-400 text-sm">Cada segundo de carregamento custa 20% de conversão. Hospedagens baratas matam vendas.</p>
             </div>
 
-            <div className="md:col-span-4 bg-red-950/20 border border-red-500/20 rounded-3xl p-6 hover:bg-red-900/20 hover:border-red-500/50 transition-colors group">
+            <div className="md:col-span-4 bg-red-950/20 border border-red-500/20 rounded-3xl p-6 hover:border-red-500/50 transition-colors group">
                 <div className="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center mb-4 text-red-500 border border-red-500/20 group-hover:scale-110 transition-transform">
                     <AlertOctagon className="w-5 h-5" />
                 </div>

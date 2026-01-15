@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
-import { ProductStructure } from './components/ProductStructure';
+import { MethodSection } from './components/MethodSection';
 import { Pricing } from './components/Pricing';
 import { Footer } from './components/Footer';
 import { LogoTicker } from './components/LogoTicker';
@@ -17,6 +16,7 @@ import { Careers } from './components/Careers';
 import { Contact } from './components/Contact';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsOfUse } from './components/TermsOfUse';
+import { WhatsAppFloat } from './components/WhatsAppFloat';
 
 type PageState = 'home' | 'briefing' | 'portfolio' | 'about' | 'careers' | 'contact' | 'privacy' | 'terms';
 
@@ -78,12 +78,12 @@ const App: React.FC = () => {
       <main>
         {currentPage === 'home' && (
           <div className="animate-fade-in">
-            <Hero />
+            <Hero onStartProject={() => handlePlanSelect('mypages')} />
             <PainSection />
             <LogoTicker />
             <Features />
-            <ProductStructure />
             <Testimonials />
+            <MethodSection />
             <Pricing onPlanSelect={handlePlanSelect} />
             <FAQ />
           </div>
@@ -121,7 +121,12 @@ const App: React.FC = () => {
         )}
       </main>
 
-      {currentPage === 'home' && <Footer onNavigate={handleNavigation} />}
+      {currentPage === 'home' && (
+        <>
+          <Footer onNavigate={handleNavigation} />
+          <WhatsAppFloat />
+        </>
+      )}
       
     </div>
   );

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Check, ArrowRight, ShieldCheck, Zap, Globe, Rocket, Layers, BarChart, Sparkles, Star } from 'lucide-react';
+import { Check, ArrowRight, ShieldCheck, Zap, Globe, Rocket, Layers, Sparkles, Star, Lock } from 'lucide-react';
 
 interface PricingProps {
   onPlanSelect?: (planName: string) => void;
@@ -41,73 +40,65 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
             <h2 className="text-6xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
                 Planos
             </h2>
-            <p className="text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto font-medium">
-                Escolha o formato ideal para o seu momento. Seja para lançar uma oferta rápida, construir autoridade ou escalar sua estrutura.
-            </p>
         </div>
 
         {/* The 3 Models Grid */}
         <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             
             {/* ============================================================
-                MODELO 1: LANDING PAGE
+                MODELO 1: PÁGINA DE VENDAS PROFISSIONAL
                ============================================================ */}
             <div className="group relative rounded-[2.5rem] p-8 bg-slate-900/40 border border-slate-800 backdrop-blur-sm hover:bg-slate-900/60 transition-all duration-500 hover:border-slate-600 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
                 
-                {/* Glow Effect on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem] pointer-events-none"></div>
 
                 <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mb-8 border border-slate-700 shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
                     <Rocket className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-3">1. Criação de Landing Page</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">1. Página de Vendas Profissional</h3>
                 <p className="text-sm text-slate-400 mb-8 leading-relaxed">
-                    Ideal para vender um serviço ou produto específico, capturar leads ou lançamentos.
+                    Ideal para vender um serviço ou produto específico, gerar contatos qualificados ou lançar uma oferta.
                 </p>
 
                 <div className="bg-white/5 rounded-2xl p-5 border border-white/5 mb-8 backdrop-blur-md">
                     <p className="text-[10px] font-bold text-white uppercase tracking-wider mb-1">Modelo</p>
-                    <p className="text-white font-bold text-lg">Pagamento Único (Projeto)</p>
+                    <p className="text-white font-bold text-lg">Pagamento único por projeto</p>
                 </div>
 
                 <ul className="space-y-4 mb-10 flex-1">
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                        <span>Entrega em <strong className="text-white">24h/48H</strong></span>
+                        <span>Entrega em até <strong className="text-white">24h a 48h</strong></span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                        <span>Suporte 7 a 15 Dias</span>
+                        <span>Suporte <strong className="text-white">7 dias</strong> após a entrega</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                        <span>Copywriting Persuasivo Incluso</span>
+                        <span>Copywriting persuasivo focado em conversão</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                        <span>Integração com WhatsApp/CRM</span>
+                        <span>Integração com WhatsApp e CRM</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                        <span>Página Única (One-Page) de Alta Conversão</span>
+                        <span>Personalização total (sem templates engessados)</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                        <span>Personalização Infinita (Sem Templates Presos)</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm text-slate-300">
-                        <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                        <span>Conexão com seu Domínio (HostGator e Outros)</span>
+                        <span>Conexão com seu domínio (HostGator ou outros)</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Zap className="w-5 h-5 text-amber-500 fill-amber-500 flex-shrink-0" />
-                        <span className="font-bold text-white">Carregamento Rápido e Fluido (Alta performance)</span>
+                        <span className="font-bold text-white">Carregamento rápido e experiência fluida</span>
                     </li>
                 </ul>
 
                 <button 
-                    onClick={() => handleSelection('Criação de Landing Page', true)} 
+                    onClick={() => handleSelection('Página de Vendas Profissional', true)} 
                     className="w-full py-4 rounded-xl border border-slate-700 bg-transparent text-white font-bold hover:bg-white hover:text-black transition-all duration-300 text-sm flex items-center justify-center gap-2 group-hover:border-white"
                 >
                     Solicitar Orçamento
@@ -116,73 +107,60 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
             </div>
 
             {/* ============================================================
-                MODELO 2: CRIAÇÃO DE SITE (FEATURED)
+                MODELO 2: SITE PROFISSIONAL COMPLETO
                ============================================================ */}
             <div className="group relative rounded-[2.5rem] p-8 bg-slate-900/80 border border-brand-500/50 backdrop-blur-md transition-all duration-500 hover:shadow-[0_0_60px_rgba(37,99,235,0.15)] hover:-translate-y-3 flex flex-col z-10 scale-[1.02]">
-                
-                {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-brand-600/10 to-transparent opacity-100 rounded-[2.5rem] pointer-events-none"></div>
-                
-                {/* Top Badge */}
                 <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg flex items-center gap-2">
                     <Star size={12} fill="currentColor" /> Recomendado
                 </div>
-
                 <div className="w-16 h-16 bg-gradient-to-br from-brand-500 to-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-brand-500/20 group-hover:scale-110 transition-transform duration-300 relative z-10">
                     <Globe className="w-8 h-8 text-white" />
                 </div>
-
-                <h3 className="text-2xl font-bold text-white mb-3">2. Criação de Site</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">2. Site Profissional Completo</h3>
                 <p className="text-sm text-slate-300 mb-8 leading-relaxed">
-                    Estrutura institucional completa com múltiplas páginas para empresas consolidadas.
+                    Estrutura institucional completa para profissionais e empresas que precisam de presença sólida, autoridade e escalabilidade.
                 </p>
-
                 <div className="bg-brand-900/20 rounded-2xl p-5 border border-brand-500/20 mb-8 backdrop-blur-md">
                     <p className="text-[10px] font-bold text-white uppercase tracking-wider mb-1">Modelo</p>
-                    <p className="text-white font-bold text-lg">Pagamento Único (Projeto)</p>
+                    <p className="text-white font-bold text-lg">Pagamento único por projeto</p>
                 </div>
-
                 <ul className="space-y-4 mb-10 flex-1">
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-brand-400 flex-shrink-0" />
-                        <span>Entrega em <strong className="text-white">24h/48H</strong></span>
+                        <span>Entrega em <strong className="text-white">24h a 48h</strong></span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-brand-400 flex-shrink-0" />
-                        <span>Suporte 7 a 15 Dias</span>
+                        <span>Suporte <strong className="text-white">7 a 15 dias</strong> após a entrega</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-brand-400 flex-shrink-0" />
-                        <span>Até mesmo a redação persuasiva</span>
+                        <span>Redação persuasiva aplicada às páginas principais</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-brand-400 flex-shrink-0" />
-                        <span>Integração com WhatsApp/CRM (opcional)</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm text-slate-300">
-                        <Globe className="w-5 h-5 text-brand-400 flex-shrink-0" />
-                        <span className="font-bold text-white">Páginas Ilimitadas (Home, Sobre, Serviços...)</span>
+                        <span>Estrutura com múltiplas páginas (Home, Sobre, Serviços e outras)</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-brand-400 flex-shrink-0" />
-                        <span>Página Única (One-Page) de Alta Conversão</span>
+                        <span>Integração com WhatsApp e CRM (opcional)</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-brand-400 flex-shrink-0" />
-                        <span>Personalização Infinita de Design no Seu Site</span>
+                        <span>Personalização total de design e layout</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-brand-400 flex-shrink-0" />
-                        <span>Conexão com seu Domínio (HostGator e Outros)</span>
+                        <span>Conexão com seu domínio (HostGator ou outros)</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Zap className="w-5 h-5 text-amber-500 fill-amber-500 flex-shrink-0" />
-                        <span className="font-bold text-white">Carregamento Rápido e Fluido (Alta performance)</span>
+                        <span className="font-bold text-white">Carregamento rápido e experiência fluida</span>
                     </li>
                 </ul>
-
                 <button 
-                    onClick={() => handleSelection('Criação de Site Institucional', true)} 
+                    onClick={() => handleSelection('Site Profissional Completo', true)} 
                     className="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-blue-600 text-white font-bold hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all duration-300 text-sm flex items-center justify-center gap-2 transform hover:-translate-y-1"
                 >
                     Orçar Site Completo
@@ -191,51 +169,65 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
             </div>
 
             {/* ============================================================
-                MODELO 3: PERFORMANCE STACK
+                MODELO 3: PERFORMANCE STACK (SUPORTE)
                ============================================================ */}
             <div className="group relative rounded-[2.5rem] p-8 bg-slate-900/40 border border-slate-800 backdrop-blur-sm hover:bg-slate-900/60 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
-                
-                {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem] pointer-events-none"></div>
+                
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-slate-800 text-purple-400 border border-purple-500/30 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg flex items-center gap-2 backdrop-blur-md">
+                    <Lock size={12} className="fill-purple-400/20" /> Exclusivo MyPages
+                </div>
 
                 <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mb-8 border border-slate-700 shadow-lg group-hover:bg-purple-600 group-hover:border-purple-500 transition-all duration-300 relative z-10">
                     <Layers className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-3">3. Performance Stack <br/>(Setup & Suporte)</h3>
-                <p className="text-sm text-slate-400 mb-8 leading-relaxed">
-                    Faça alterações adicionais, adicione novas seções, integrações e muito mais.
+                <h3 className="text-2xl font-bold text-white mb-3">3. Performance Stack (Suporte)</h3>
+                <p className="text-sm text-slate-400 mb-2 leading-relaxed">
+                    Ideal para quem quer evoluir o site, testar novas ideias e manter a estrutura sempre otimizada.
                 </p>
+                
+                <div className="mb-6 flex items-center gap-2">
+                  <div className="h-px bg-slate-800 flex-1"></div>
+                  <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest whitespace-nowrap">Exclusivo para sites MyPages</span>
+                  <div className="h-px bg-slate-800 flex-1"></div>
+                </div>
 
                 <div className="bg-white/5 rounded-2xl p-5 border border-white/5 mb-8 backdrop-blur-md">
                     <p className="text-[10px] font-bold text-white uppercase tracking-wider mb-1">Modelo</p>
-                    <p className="text-white font-bold text-lg">Pagamento Único (Projeto)</p>
+                    <p className="text-white font-bold text-lg">Pagamento único por pacote de ajustes</p>
                 </div>
 
                 <ul className="space-y-4 mb-10 flex-1">
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-purple-500 flex-shrink-0" />
-                        <span>Pequenas Alterações (Texto, foto, cor)</span>
+                        <span>Ajustes rápidos (texto, imagens, cores e detalhes)</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className="w-5 h-5 text-purple-500 flex-shrink-0" />
-                        <span>Grandes Alterações (Nova seção, formulário complexo, integração com CRM)</span>
+                        <span>Novas seções e melhorias estruturais</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-slate-300">
-                        <BarChart className="w-5 h-5 text-purple-500 flex-shrink-0" />
-                        <span>Otimização Avançada (Tag Manager, Novo Pixel de Conversão, Otimização de SEO)</span>
+                        <Check className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                        <span>Formulários avançados e integrações com CRM</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-sm text-slate-300">
+                        <Check className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                        <span>Otimizações de performance e conversão</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-sm text-slate-300">
+                        <Check className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                        <span>Configuração ou atualização de pixels de conversão</span>
                     </li>
                 </ul>
-
                 <button 
-                    onClick={() => handleSelection('Performance Stack (Setup & Suporte)', true)} 
+                    onClick={() => handleSelection('Performance Stack (Suporte)', true)} 
                     className="w-full py-4 rounded-xl border border-slate-700 bg-transparent text-white font-bold hover:bg-white hover:text-purple-900 transition-all duration-300 text-sm flex items-center justify-center gap-2 group-hover:border-white"
                 >
                     Solicitar Orçamento
                     <ArrowRight size={16} />
                 </button>
             </div>
-
         </div>
 
         {/* Guarantee Seal */}
@@ -250,7 +242,6 @@ export const Pricing: React.FC<PricingProps> = ({ onPlanSelect }) => {
                 </p>
             </div>
         </div>
-
       </div>
     </section>
   );

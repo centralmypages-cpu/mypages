@@ -1,19 +1,16 @@
-
 import React from 'react';
-import { ArrowRight, Zap, Star, TrendingUp, MessageCircle, DollarSign, Calendar, MousePointer2, Users, Target, Clock, ThumbsUp } from 'lucide-react';
-import { MyPagesLogo } from './MyPagesLogo';
+import { ArrowRight, Zap, Sparkles, Star, ShieldCheck, Target, Users } from 'lucide-react';
 
-export const Hero: React.FC = () => {
-  const openWhatsApp = () => {
-    window.open('https://api.whatsapp.com/message/OVDNOGVQF3FOK1?autoload=1&app_absent=0', '_blank');
-  };
+interface HeroProps {
+  onStartProject: () => void;
+}
 
+export const Hero: React.FC<HeroProps> = ({ onStartProject }) => {
   return (
     <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-24 pb-8 md:pt-36 md:pb-16 bg-white overflow-hidden">
       
       {/* Global Perspective Container */}
       <div className="absolute inset-0 pointer-events-none" style={{ perspective: '2000px' }}>
-         {/* Background Gradients */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
          <div className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gradient-to-br from-brand-100/50 to-transparent rounded-full blur-[80px] md:blur-[120px] opacity-60 -translate-y-1/2 translate-x-1/4"></div>
       </div>
@@ -23,8 +20,7 @@ export const Hero: React.FC = () => {
               
               {/* Left Content */}
               <div className="lg:col-span-5 text-left animate-slide-up relative z-30">
-                  
-                  <h1 className="text-[2.6rem] sm:text-5xl lg:text-7xl font-bold tracking-tighter text-slate-900 mb-5 leading-[1.05] md:leading-[1.1]">
+                  <h1 className="text-[2.6rem] sm:text-5xl lg:text-7xl font-black tracking-tighter text-slate-900 mb-5 leading-[1.05] md:leading-[1.1]">
                     Crie Sua Presença Digital <br className="hidden lg:block"/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-600 relative inline-block">
                         Digna da Sua Autoridade.
@@ -34,219 +30,162 @@ export const Hero: React.FC = () => {
                     </span>
                   </h1>
                   
-                  <p className="text-base sm:text-lg lg:text-xl text-slate-600 mb-8 max-w-lg leading-relaxed font-medium">
-                    Mostre ao mercado por que você é referência. Apresente sua autoridade com uma landing page estrategicamente construída para destacar seu valor profissional.
+                  <p className="text-base sm:text-lg lg:text-xl text-slate-600 mb-10 max-w-lg leading-relaxed font-medium">
+                    Transforme sua autoridade em novos atendimentos. Um SITE profissional feito para mostrar seu valor, gerar confiança e atrair novos pacientes ou clientes.
                   </p>
+
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                      <button 
+                        onClick={onStartProject}
+                        className="group relative px-10 py-5 bg-slate-900 text-white rounded-full font-black text-sm uppercase tracking-widest shadow-2xl shadow-slate-900/20 hover:bg-brand-600 hover:shadow-brand-500/30 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 active:scale-95"
+                      >
+                          Iniciar Projeto Agora
+                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </button>
+
+                      <div className="flex items-center gap-3 px-6 py-4 bg-white border border-slate-100 rounded-full shadow-sm">
+                          <Zap className="w-5 h-5 text-amber-500 fill-amber-500" />
+                          <span className="text-xs font-bold text-slate-700 uppercase tracking-tight">Entrega em 24h/48h</span>
+                      </div>
+                  </div>
                   
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                    <button 
-                        onClick={openWhatsApp}
-                        className="group relative px-8 py-4.5 bg-slate-900 text-white text-lg font-bold rounded-xl overflow-hidden shadow-2xl hover:shadow-brand-900/20 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
-                    >
-                      <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
-                      <span className="relative flex items-center justify-center gap-3">
-                        Solicitar Consultoria
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </button>
-                  </div>
-
-                  {/* Trust Indicators */}
-                  <div className="flex flex-col gap-4">
-                      {/* Speed Badge */}
-                      <div className="flex items-center gap-2.5 px-4 py-2.5 bg-blue-50 text-blue-700 rounded-xl border-2 border-blue-100 font-black text-sm md:text-lg uppercase tracking-tight shadow-sm w-fit">
-                          <Zap className="w-4 h-4 md:w-5 md:h-5 fill-blue-700 shrink-0" />
-                          24h/48h Entrega
+                  <div className="mt-8 flex items-center gap-4 text-slate-400">
+                      <div className="flex -space-x-2">
+                          {[1,2,3].map(i => <img key={i} src={`https://i.pravatar.cc/100?img=${i+10}`} className="w-8 h-8 rounded-full border-2 border-white" />)}
                       </div>
+                      <p className="text-xs font-bold uppercase tracking-wider">+500 Clientes Satisfeitos</p>
                   </div>
               </div>
 
-              {/* Right Visual Content - 3D WHIRLWIND VIVID COLORS */}
+              {/* Right Visual Content */}
               <div className="lg:col-span-7 relative mt-4 lg:mt-0 flex justify-center lg:justify-end overflow-visible">
-                  <div className="relative w-full max-w-[700px] h-[380px] sm:h-[500px] md:h-[700px] flex items-center justify-center [perspective:2000px] scale-[0.85] sm:scale-90 md:scale-100">
+                  <div className="relative w-full max-w-[750px] h-[400px] sm:h-[600px] md:h-[800px] flex items-center justify-center">
                       
-                      {/* Central Smoke Effect */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-brand-500/10 rounded-full blur-[50px] md:blur-[100px] pointer-events-none mix-blend-screen animate-pulse z-0"></div>
+                      {/* 1. Vortex SVG Layers */}
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                          <div className="absolute w-[280px] h-[280px] md:w-[500px] md:h-[500px] border border-brand-500/20 rounded-full animate-vortex-spin-slowest will-change-transform"></div>
+                          
+                          <div className="absolute w-[320px] h-[320px] md:w-[600px] md:h-[600px] animate-vortex-spin-slow will-change-transform">
+                            <svg className="w-full h-full" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#vortex-gradient-1)" strokeWidth="0.5" strokeDasharray="10 20" className="opacity-40" />
+                                <circle cx="50" cy="50" r="38" fill="none" stroke="url(#vortex-gradient-2)" strokeWidth="0.8" strokeDasharray="50 10" className="opacity-30" />
+                                <defs>
+                                    <linearGradient id="vortex-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#3b82f6" />
+                                        <stop offset="100%" stopColor="#2563eb" />
+                                    </linearGradient>
+                                    <linearGradient id="vortex-gradient-2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stopColor="#60a5fa" />
+                                        <stop offset="100%" stopColor="#1e3a8a" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                          </div>
 
-                      {/* --- 3D RINGS CONTAINER --- */}
-                      <div className="absolute inset-0 flex items-center justify-center [transform-style:preserve-3d] [transform:rotateZ(90deg)_rotateY(10deg)] z-10 will-change-transform">
-                           
-                           {/* Ring 1 - Outer */}
-                           <div className="absolute border-[1px] border-slate-200/50 rounded-full w-[280px] h-[280px] md:w-[650px] md:h-[650px] shadow-[0_0_30px_rgba(148,163,184,0.05)] [transform-style:preserve-3d] will-change-transform">
-                                <div className="w-full h-full animate-spin-orbit [transform-style:preserve-3d]">
-                                    <div className="absolute top-0 left-1/2 w-auto h-auto -translate-x-1/2 -translate-y-1/2 [transform-style:preserve-3d] animate-counter-spin-vertical">
-                                        <div className="transform -rotate-90">
-                                            <div className="bg-white/95 backdrop-blur px-2 py-1 md:px-3 md:py-1.5 rounded-full shadow-lg border border-slate-100 text-[8px] md:text-[10px] font-bold text-slate-600 flex items-center gap-1.5 whitespace-nowrap hover:scale-110 transition-transform">
-                                                <Users className="w-2 h-2 md:w-3 md:h-3 text-slate-400" />
-                                                Tráfego Qualificado
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="absolute top-[25%] left-[10%] w-8 h-8 md:w-12 md:h-12 -translate-x-1/2 -translate-y-1/2 [transform-style:preserve-3d] animate-counter-spin-vertical">
-                                        <div className="transform -rotate-90">
-                                            <div className="bg-white p-1.5 md:p-2.5 rounded-xl md:rounded-2xl shadow-xl border border-brand-50">
-                                                <MyPagesLogo className="w-5 h-5 md:w-7 md:h-7 text-brand-500" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    {/* Item: Dollar Sign - VIVID NEON */}
-                                    <div className="absolute bottom-[20%] right-[20%] w-8 h-8 md:w-10 md:h-10 -translate-x-1/2 -translate-y-1/2 [transform-style:preserve-3d] animate-counter-spin-vertical">
-                                        <div className="transform -rotate-90">
-                                            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#00FF9D] text-slate-900 flex items-center justify-center shadow-[0_0_35px_rgba(0,255,157,0.7)] border-2 border-white">
-                                                <DollarSign className="w-4 h-4 md:w-5 md:h-5 stroke-[3px]" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                           </div>
-
-                           {/* Ring 2 - Mid */}
-                           <div className="absolute border-[1.5px] border-brand-300/40 rounded-full w-[220px] h-[220px] md:w-[500px] md:h-[500px] shadow-[0_0_40px_rgba(37,99,235,0.1)] [transform-style:preserve-3d] will-change-transform">
-                                <div className="w-full h-full animate-spin-orbit-reverse [transform-style:preserve-3d]">
-                                    <div className="absolute bottom-0 right-1/2 w-auto h-auto translate-x-1/2 translate-y-1/2 [transform-style:preserve-3d] animate-counter-spin-vertical-reverse">
-                                        <div className="transform -rotate-90">
-                                            <div className="bg-brand-600 px-2 py-1 md:px-3 md:py-1.5 rounded-full shadow-lg border border-brand-500 text-[8px] md:text-[10px] font-bold text-white flex items-center gap-1.5 whitespace-nowrap hover:scale-110 transition-transform">
-                                                <Target className="w-2 h-2 md:w-3 md:h-3 text-white" />
-                                                Estratégia de Elite
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    {/* Item: Clock - VIVID NEON */}
-                                    <div className="absolute top-[30%] left-[5%] w-7 h-7 md:w-9 md:h-9 -translate-x-1/2 -translate-y-1/2 [transform-style:preserve-3d] animate-counter-spin-vertical-reverse">
-                                        <div className="transform -rotate-90">
-                                            <div className="w-7 h-7 md:w-9 md:h-9 rounded-full bg-[#FFB800] text-slate-900 flex items-center justify-center shadow-[0_0_25px_rgba(255,184,0,0.7)] border-2 border-white">
-                                                <Clock className="w-3 h-3 md:w-4 md:h-4 stroke-[3px]" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                           </div>
-
-                           {/* Ring 3 - Inner */}
-                           <div className="absolute border-[1.5px] border-emerald-400/50 rounded-full w-[160px] h-[160px] md:w-[350px] md:h-[350px] shadow-[0_0_30px_rgba(16,185,129,0.15)] [transform-style:preserve-3d] will-change-transform">
-                                <div className="w-full h-full animate-spin-orbit-fast [transform-style:preserve-3d]">
-                                    <div className="absolute top-1/2 right-[-10px] md:right-[-15px] w-auto h-auto -translate-y-1/2 [transform-style:preserve-3d] animate-counter-spin-vertical-fast">
-                                        <div className="transform -rotate-90">
-                                            <div className="bg-emerald-50 px-2 py-1 md:px-3 md:py-1.5 rounded-full shadow-lg border border-emerald-200 text-[8px] md:text-[10px] font-bold text-emerald-700 flex items-center gap-1.5 whitespace-nowrap hover:scale-110 transition-transform">
-                                                <Zap className="w-2 h-2 md:w-3 md:h-3 fill-emerald-600 text-emerald-600" />
-                                                Pronto em 24h/48h
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                           </div>
-
+                          <div className="absolute w-[110%] h-[110%] animate-vortex-spin-reverse opacity-20 will-change-transform">
+                            <svg className="w-full h-full" viewBox="0 0 100 100">
+                               <circle cx="50" cy="50" r="49" fill="none" stroke="#94a3b8" strokeWidth="0.1" strokeDasharray="1 15" />
+                            </svg>
+                          </div>
+                          <div className="absolute w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-brand-500/10 rounded-full blur-[100px] animate-pulse"></div>
                       </div>
-                      
-                      {/* --- CENTRAL WEBSITE --- */}
-                      <div className="absolute top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 will-change-transform perspective-1000">
-                          <div className="w-[140px] md:w-[260px] h-[260px] md:h-[480px] bg-slate-900 rounded-[1.5rem] md:rounded-[2.5rem] border-[4px] md:border-[8px] border-slate-800 shadow-[0_30px_80px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/10 hover:scale-105 hover:rotate-y-12 transition-all duration-700 transform-gpu relative preserve-3d">
-                              {/* Mini Browser Bar */}
-                              <div className="bg-slate-800 h-4 md:h-7 w-full flex items-center justify-center px-2 relative z-10">
-                                  <div className="w-8 md:w-16 h-1.5 md:h-3 bg-slate-900 rounded-full"></div>
+
+                      {/* 2. Orbit Cards - Locked to Paths */}
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                        {/* Outer Orbit */}
+                        <div className="absolute w-[288px] h-[288px] md:w-[540px] md:h-[540px] animate-vortex-layer-1 will-change-transform">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-counter-vortex-layer-1 will-change-transform">
+                                <div className="bg-white/95 backdrop-blur-2xl border border-slate-200 p-2 md:p-5 rounded-xl md:rounded-[1.5rem] shadow-xl flex items-center gap-2 md:gap-4 whitespace-nowrap">
+                                    <div className="w-7 h-7 md:w-12 md:h-12 bg-brand-100 rounded-lg md:rounded-2xl flex items-center justify-center text-brand-600">
+                                        <ShieldCheck size={16} className="md:w-6 md:h-6" />
+                                    </div>
+                                    <span className="text-[10px] md:text-base font-black text-slate-900 tracking-tight">Autoridade Digital</span>
+                                </div>
+                            </div>
+                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 animate-counter-vortex-layer-1 will-change-transform">
+                                <div className="bg-white/95 backdrop-blur-2xl border border-slate-200 p-2 md:p-5 rounded-xl md:rounded-[1.5rem] shadow-xl flex items-center gap-2 md:gap-4 whitespace-nowrap">
+                                    <div className="w-7 h-7 md:w-12 md:h-12 bg-emerald-100 rounded-lg md:rounded-2xl flex items-center justify-center text-emerald-600">
+                                        <Users size={16} className="md:w-6 md:h-6" />
+                                    </div>
+                                    <span className="text-[10px] md:text-base font-black text-slate-900 tracking-tight">Mais Atendimentos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Inner Orbit */}
+                        <div className="absolute w-[243px] h-[243px] md:w-[456px] md:h-[456px] animate-vortex-layer-2 will-change-transform">
+                            <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 animate-counter-vortex-layer-2 will-change-transform">
+                                <div className="bg-white/95 backdrop-blur-2xl border border-slate-200 p-2 md:p-5 rounded-xl md:rounded-[1.5rem] shadow-xl flex items-center gap-2 md:gap-4 whitespace-nowrap">
+                                    <div className="w-7 h-7 md:w-12 md:h-12 bg-blue-100 rounded-lg md:rounded-2xl flex items-center justify-center text-blue-600">
+                                        <Target size={16} className="md:w-6 md:h-6" />
+                                    </div>
+                                    <span className="text-[10px] md:text-base font-black text-slate-900 tracking-tight">Posicionamento Estratégico</span>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      {/* 3. Central Phone */}
+                      <div className="absolute inset-0 flex items-center justify-center z-40 pointer-events-none">
+                          <div className="animate-float-slow w-[140px] md:w-[280px] h-[260px] md:h-[520px] bg-slate-900 rounded-[1.8rem] md:rounded-[3rem] border-[5px] md:border-[10px] border-slate-800 shadow-2xl overflow-hidden relative will-change-transform">
+                              <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 pointer-events-none z-20 animate-screen-shine will-change-transform"></div>
+                              <div className="bg-slate-800 h-4 md:h-8 w-full flex items-center justify-center px-2 relative z-30">
+                                  <div className="w-10 md:w-20 h-1 md:h-3 bg-slate-900 rounded-full"></div>
                               </div>
-                              
-                              {/* Content Layer */}
                               <div className="w-full h-full bg-white relative">
-                                   <div className="absolute top-0 left-0 w-full animate-scroll-vertical">
-                                       <div className="h-24 md:h-44 bg-gradient-to-b from-brand-900 to-brand-800 flex flex-col items-center justify-center p-2 md:p-4 text-center relative">
-                                           <div className="w-8 h-8 md:w-12 md:h-12 bg-white/10 rounded-full mb-1.5 md:mb-3 backdrop-blur-md flex items-center justify-center border border-white/20">
-                                              <Star className="w-4 h-4 md:w-6 md:h-6 text-white fill-white" />
-                                           </div>
-                                           <div className="w-20 md:w-32 h-1.5 md:h-2.5 bg-white rounded mb-1 md:mb-2"></div>
-                                           <div className="w-20 md:w-28 h-5 md:h-8 bg-green-500 text-white rounded-md md:rounded-lg shadow-lg flex items-center justify-center text-[6px] md:text-[10px] font-bold">
-                                              AGENDAR AGORA
-                                           </div>
-                                       </div>
-                                   </div>
-                                   <div className="absolute bottom-6 md:bottom-12 right-3 md:right-6 z-20 animate-pulse">
-                                       <div className="w-6 h-6 md:w-10 md:h-10 bg-white/30 rounded-full flex items-center justify-center backdrop-blur-md border border-white/40 shadow-xl">
-                                           <MousePointer2 className="w-3 h-3 md:w-5 md:h-5 text-white fill-white" />
-                                       </div>
-                                   </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      {/* --- FLOATING NOTIFICATIONS --- */}
-                      <div className="absolute inset-0 z-50 pointer-events-none perspective-2000 preserve-3d">
-                          <div className="absolute top-[5%] right-[-2%] md:right-[0%] w-36 md:w-60 z-50">
-                              <div className="animate-float">
-                                  <div className="transform rotate-y-12 rotate-6 hover:rotate-0 transition-transform duration-500 ease-out preserve-3d">
-                                      <div className="bg-white/95 backdrop-blur-md p-2 md:p-3 rounded-xl md:rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-white/50 ring-1 ring-slate-900/5">
-                                          <div className="flex items-center gap-2 md:gap-3">
-                                              <div className="relative shrink-0">
-                                                  <img src="https://i.pravatar.cc/150?img=5" alt="Cliente" className="w-7 h-7 md:w-10 md:h-10 rounded-full object-cover border border-white shadow-sm" />
-                                              </div>
-                                              <div className="flex-1 min-w-0">
-                                                  <p className="text-[8px] md:text-[11px] font-bold text-slate-900 truncate">Ana Clara</p>
-                                                  <p className="text-[7px] md:text-[10px] text-emerald-600 font-bold leading-tight truncate">"Amei o design!"</p>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div className="absolute bottom-[10%] left-[-5%] md:left-[-5%] w-36 md:w-56 hidden sm:block z-40">
-                               <div className="animate-float-reverse">
-                                    <div className="transform -rotate-y-12 -rotate-6 transition-transform hover:rotate-0 duration-500 origin-center preserve-3d">
-                                         <div className="bg-white/95 backdrop-blur-md p-2 md:p-3 rounded-xl md:rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-emerald-100 ring-1 ring-slate-900/5">
-                                             <div className="flex items-center gap-2 md:gap-3">
-                                                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 shadow-inner border border-emerald-100">
-                                                     <DollarSign className="w-4 h-4 md:w-5 md:h-5 text-emerald-600" />
-                                                 </div>
-                                                 <div>
-                                                     <p className="text-[8px] md:text-[10px] font-bold text-emerald-600 uppercase tracking-wider mb-0.5">Pix Recebido</p>
-                                                     <p className="text-xs md:text-sm font-black text-slate-900">R$ 3.500,00</p>
-                                                 </div>
-                                             </div>
+                                   <div className="absolute top-0 left-0 w-full animate-scroll-vertical flex flex-col will-change-transform">
+                                       {[1, 2].map((i) => (
+                                         <div key={i} className="flex flex-col">
+                                            <div className="h-[280px] md:h-[500px] bg-slate-900 p-6 flex flex-col items-center justify-center text-center">
+                                                <div className="w-10 h-10 md:w-16 md:h-16 bg-brand-500/20 rounded-2xl flex items-center justify-center mb-6 border border-brand-500/30 animate-pulse">
+                                                    <Sparkles className="w-5 h-5 md:w-8 md:h-8 text-brand-400" />
+                                                </div>
+                                                <div className="w-3/4 h-2 md:h-4 bg-white/90 rounded-full mb-3"></div>
+                                                <div className="w-1/2 h-2 md:h-4 bg-white/90 rounded-full mb-8"></div>
+                                                <div className="w-32 md:w-48 h-8 md:h-14 bg-brand-600 rounded-xl flex items-center justify-center text-white text-[8px] md:text-[14px] font-black uppercase">SOLICITAR AGORA</div>
+                                            </div>
+                                            <div className="p-5 space-y-4 bg-white">
+                                                <div className="grid grid-cols-2 gap-4">
+                                                    {[1,2,3,4].map(idx => <div key={idx} className="aspect-square bg-slate-50 rounded-xl border border-slate-100"></div>)}
+                                                </div>
+                                            </div>
+                                            <div className="h-[180px] md:h-[350px] bg-gradient-to-b from-brand-700 to-brand-900 p-6 flex flex-col items-center justify-center">
+                                                <div className="w-3/4 h-8 md:h-14 bg-green-500 rounded-xl shadow-2xl flex items-center justify-center text-white text-[7px] md:text-[12px] font-black uppercase">WHATSAPP</div>
+                                            </div>
                                          </div>
-                                    </div>
-                               </div>
+                                       ))}
+                                   </div>
+                              </div>
                           </div>
                       </div>
-
                   </div>
               </div>
-
           </div>
       </div>
-      
+
       <style>{`
-        @keyframes spin-orbit {
-            0% { transform: rotateZ(0deg); }
-            100% { transform: rotateZ(360deg); }
-        }
-        @keyframes spin-orbit-reverse {
-            0% { transform: rotateZ(360deg); }
-            100% { transform: rotateZ(0deg); }
-        }
-        @keyframes spin-orbit-fast {
-            0% { transform: rotateZ(0deg); }
-            100% { transform: rotateZ(360deg); }
-        }
+        @keyframes vortex-spin-slowest { from { transform: translate3d(0,0,0) rotate(0deg); } to { transform: translate3d(0,0,0) rotate(360deg); } }
+        @keyframes vortex-spin-slow { from { transform: translate3d(0,0,0) rotate(0deg); } to { transform: translate3d(0,0,0) rotate(360deg); } }
+        @keyframes vortex-spin-reverse { from { transform: translate3d(0,0,0) rotate(360deg); } to { transform: translate3d(0,0,0) rotate(0deg); } }
+        @keyframes vortex-layer-1 { from { transform: translate3d(0,0,0) rotate(0deg); } to { transform: translate3d(0,0,0) rotate(360deg); } }
+        @keyframes vortex-layer-2 { from { transform: translate3d(0,0,0) rotate(0deg); } to { transform: translate3d(0,0,0) rotate(360deg); } }
+        @keyframes counter-vortex-layer-1 { from { transform: translate3d(0,0,0) rotate(0deg); } to { transform: translate3d(0,0,0) rotate(-360deg); } }
+        @keyframes counter-vortex-layer-2 { from { transform: translate3d(0,0,0) rotate(0deg); } to { transform: translate3d(0,0,0) rotate(-360deg); } }
+        @keyframes scroll-vertical { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(0, -50%, 0); } }
+        @keyframes screen-shine { 0% { transform: translate3d(-150%, 0, 0) skewX(-20deg); opacity: 0; } 25% { opacity: 0.4; } 50%, 100% { transform: translate3d(150%, 0, 0) skewX(-20deg); opacity: 0; } }
+        @keyframes float-slow { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -15px, 0); } }
 
-        .animate-spin-orbit {
-            animation: spin-orbit 40s linear infinite;
-        }
-        .animate-spin-orbit-reverse {
-            animation: spin-orbit-reverse 30s linear infinite;
-        }
-        .animate-spin-orbit-fast {
-            animation: spin-orbit-fast 20s linear infinite;
-        }
-
-        @keyframes scroll-vertical {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); }
-        }
-        .animate-scroll-vertical {
-            animation: scroll-vertical 8s linear infinite;
-        }
+        .animate-vortex-spin-slowest { animation: vortex-spin-slowest 120s linear infinite; }
+        .animate-vortex-spin-slow { animation: vortex-spin-slow 60s linear infinite; }
+        .animate-vortex-spin-reverse { animation: vortex-spin-reverse 45s linear infinite; }
+        .animate-vortex-layer-1 { animation: vortex-layer-1 40s linear infinite; }
+        .animate-vortex-layer-2 { animation: vortex-layer-2 32s linear infinite; }
+        .animate-counter-vortex-layer-1 { animation: counter-vortex-layer-1 40s linear infinite; }
+        .animate-counter-vortex-layer-2 { animation: counter-vortex-layer-2 32s linear infinite; }
+        .animate-scroll-vertical { animation: scroll-vertical 28s linear infinite; }
+        .animate-screen-shine { animation: screen-shine 8s ease-in-out infinite; }
+        .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+        .will-change-transform { will-change: transform; }
       `}</style>
     </section>
   );

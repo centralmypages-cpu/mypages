@@ -5,7 +5,7 @@ import { Plus, Minus, HelpCircle } from 'lucide-react';
 const faqs = [
   {
     question: "Preciso pagar mensalidade para ter o site?",
-    answer: "Não. Os planos de Criação (Landing Page ou Site Completo) são pagamento único. Você paga uma vez para criar — e o site é seu para sempre. A única despesa recorrente é o domínio, caso você ainda não tenha."
+    answer: "Não. Os planos de Criação (Página de Vendas ou Site Completo) são pagamento único. Você paga uma vez para criar — e o site é seu para sempre. A única despesa recorrente é o domínio, caso você ainda não tenha."
   },
   {
     question: "Como funciona a garantia de entrega em 24h/48h?",
